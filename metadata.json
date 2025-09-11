@@ -1,0 +1,7 @@
+{
+  "name": "Sahay - AI Mental Health Support",
+  "description": "An AI-powered chatbot providing confidential support and resources for student mental well-being, based on the blueprint for an Integrated Digital Mental Health Ecosystem.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
