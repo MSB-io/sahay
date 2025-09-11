@@ -203,6 +203,7 @@ const voiceModeCloseBtn = document.getElementById('voice-mode-close-btn') as HTM
 const voiceVisualizer = document.getElementById('voice-visualizer') as HTMLDivElement;
 const voiceTranscript = document.getElementById('voice-transcript') as HTMLParagraphElement;
 const themeButtons = document.querySelectorAll('.theme-btn');
+const logoutBtn = document.getElementById('logout-btn') as HTMLButtonElement;
 
 
 // --- APPLICATION STATE ---
@@ -829,6 +830,10 @@ function initializeApp() {
             const theme = button.getAttribute('data-theme');
             if(theme) applyTheme(theme);
         });
+    });
+
+    logoutBtn.addEventListener('click', () => {
+        window.location.hash = '';
     });
     
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
