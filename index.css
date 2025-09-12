@@ -1002,6 +1002,11 @@ body:not(.modal-open) {
     height: 2rem;
 }
 
+.logo-text-bold {
+    font-weight: 700 !important;
+    font-size: 1.375rem;
+}
+
 .landing-nav {
     display: flex;
     align-items: center;
