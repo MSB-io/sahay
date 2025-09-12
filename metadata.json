@@ -1,6 +1,6 @@
 {
-  "name": "Sahay - AI Mental Health Support",
-  "description": "An AI-powered chatbot providing confidential support and resources for student mental well-being, based on the blueprint for an Integrated Digital Mental Health Ecosystem.",
+  "name": "Sahay - AI Mental Health Support for Indian Students",
+  "description": "An AI-powered chatbot providing confidential mental health support and resources specifically designed for Indian students, addressing academic pressure, family expectations, competitive exam stress, and cultural challenges.",
   "requestFramePermissions": [
     "microphone"
   ]

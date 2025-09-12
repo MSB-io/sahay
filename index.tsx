@@ -242,6 +242,54 @@ const articleContent: { [key: string]: { title: string; content: string } } = {
       <p>It's also important to be comfortable with your own company. Cultivating hobbies and interests that you can enjoy alone can make solitude feel less like loneliness. If feelings of loneliness persist and are impacting your mental health, reaching out to a counselor can provide support and strategies for building connections.</p>
     `,
   },
+  competitiveExams: {
+    title: "Managing JEE/NEET and Competitive Exam Pressure",
+    content: `
+      <p>Competitive exams like JEE, NEET, UPSC, and others form the backbone of Indian higher education, but they can create immense psychological pressure. The combination of fierce competition, parental expectations, and societal pressure can overwhelm even the most dedicated students.</p>
+      <p>It's important to remember that your worth is not defined by a single exam result. Create a balanced study schedule that includes breaks, physical activity, and time for hobbies. Practice stress management techniques like deep breathing, meditation, or yoga - ancient Indian practices that have proven mental health benefits.</p>
+      <p>Communicate openly with your family about the pressure you're feeling. Many parents may not realize the emotional toll these exams take. Set realistic goals and have backup plans. Remember, there are multiple paths to success, and one exam doesn't determine your entire future.</p>
+    `,
+  },
+  placementStress: {
+    title: "Placement Anxiety & Career Fears",
+    content: `
+      <p>The placement season can be one of the most stressful periods for Indian students, especially in engineering and management colleges. The fear of not getting placed, salary comparisons, and uncertainty about the future can create significant anxiety.</p>
+      <p>Focus on skill development rather than just placement outcomes. The job market is evolving rapidly, and adaptability is more valuable than a perfect GPA. Practice interview skills, work on communication, and build a portfolio of projects that showcase your abilities.</p>
+      <p>Remember that placements are not the only path to a successful career. Many successful entrepreneurs and professionals started their journey differently. Network with alumni, consider internships, and explore startup opportunities. Your career is a marathon, not a sprint, and the first job is just the beginning.</p>
+    `,
+  },
+  academicBurnout: {
+    title: "Academic Burnout in Indian Education System",
+    content: `
+      <p>Academic burnout is particularly common in India's highly competitive education system. The pressure to excel academically, combined with coaching classes, multiple exams, and family expectations, can lead to physical and emotional exhaustion.</p>
+      <p>Signs of burnout include chronic fatigue, loss of motivation, declining academic performance despite effort, and feeling overwhelmed by even simple tasks. It's crucial to recognize these signs early and take action.</p>
+      <p>Recovery strategies include taking regular breaks, engaging in physical activities, pursuing hobbies outside academics, and seeking support from friends, family, or counselors. Don't hesitate to talk to your teachers or college counselors about reducing your course load temporarily if needed. Remember, your mental health is more important than academic achievement.</p>
+    `,
+  },
+  familyPressure: {
+    title: "Dealing with Family Expectations and Pressure",
+    content: `
+      <p>Indian families often have high expectations for their children's academic and career success. While this comes from love and care, it can sometimes create overwhelming pressure and conflict between personal desires and family expectations.</p>
+      <p>Start by having honest conversations with your family about your interests, strengths, and career goals. Help them understand that success can be defined in many ways, not just through traditional career paths like engineering, medicine, or civil services.</p>
+      <p>Set boundaries while remaining respectful. Explain your perspective calmly and provide examples of successful people in your field of interest. Sometimes families need time to understand and accept different career choices. Consider involving a neutral family member or counselor to facilitate these conversations if needed.</p>
+    `,
+  },
+  financialStress: {
+    title: "Managing Financial Stress During Studies",
+    content: `
+      <p>Financial constraints are a reality for many Indian students and can significantly impact mental health. The cost of education, coaching classes, and living expenses can create stress for both students and families.</p>
+      <p>Look into scholarship opportunities, education loans with favorable terms, and part-time work options that don't interfere with your studies. Many colleges offer financial aid and work-study programs that can help reduce the burden.</p>
+      <p>Remember that financial difficulties are temporary, and education is an investment in your future. Focus on your studies while being mindful of expenses. Consider online resources for learning, which are often more affordable than traditional coaching. Most importantly, don't let financial stress compromise your mental health - seek support from college counselors who can guide you to available resources.</p>
+    `,
+  },
+  hostelLife: {
+    title: "Adapting to Hostel Life and Managing Homesickness",
+    content: `
+      <p>Moving away from home for the first time can be challenging for Indian students, especially those from close-knit families. Homesickness, adjustment issues, and the transition to independent living can affect academic performance and mental well-being.</p>
+      <p>It's normal to feel homesick initially. Stay connected with family through regular calls, but also give yourself time to adjust to the new environment. Make an effort to build friendships with roommates and hostel mates - they often become lifelong friends.</p>
+      <p>Establish routines that provide comfort and stability. This could include regular meal times, study schedules, or weekend activities. Get involved in college festivals, clubs, and activities to build a sense of community. Remember, thousands of students successfully make this transition every year, and you will too.</p>
+    `,
+  },
 };
 
 // --- DOM ELEMENTS ---
@@ -445,13 +493,17 @@ async function initializeChat() {
     chat = ai.chats.create({
       model: "gemini-2.5-flash",
       config: {
-        systemInstruction: `You are a warm, empathetic, and supportive AI assistant from 'Sahay', designed to help students with their mental well-being.
-- Your primary role is to offer psychological first-aid, provide a safe space for students to express their feelings, and share basic, evidence-based coping strategies (like mindfulness or cognitive reframing).
-- You are NOT a human therapist or a replacement for professional medical advice. You must make this clear if the user seems to believe you are human or asks for a diagnosis.
-- Your personality is non-clinical, encouraging, and non-judgmental.
-- Do not provide diagnoses or medical advice. Instead, gently guide users to consider help from qualified professionals.
-- Keep your responses concise, easy to understand, and structured with paragraphs for readability.
-- Start the very first conversation with a gentle and welcoming message.`,
+        systemInstruction: `You are a warm, empathetic, and supportive AI assistant from 'Sahay', designed specifically to help Indian students with their mental well-being and academic challenges.
+
+- Your primary role is to offer psychological first-aid, provide a safe space for Indian students to express their feelings about academic pressure, family expectations, career anxiety, and personal struggles.
+- You understand the unique pressures of Indian education system including JEE/NEET preparation, competitive exams, placement stress, family expectations about career choices, and cultural challenges.
+- You are culturally aware of Indian values, joint family dynamics, financial pressures, and the stigma around mental health in Indian society.
+- Provide evidence-based coping strategies that are practical in Indian context, including traditional practices like meditation and yoga alongside modern techniques.
+- You are NOT a human therapist or replacement for professional medical advice. Encourage seeking help from qualified mental health professionals, counselors, or psychiatrists when needed.
+- Be sensitive to financial constraints many Indian students face and suggest affordable mental health resources when appropriate.
+- Use "Namaste" as greeting occasionally and be understanding of cultural and religious diversity in India.
+- Keep responses concise, culturally sensitive, and structured for readability.
+- Start conversations with warmth and understanding of the unique challenges Indian students face.`,
       },
     });
   } catch (e) {
