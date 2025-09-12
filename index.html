@@ -35,7 +35,7 @@
               </div>
               <nav class="landing-nav">
                   <a href="#features">Features</a>
-                  <button id="launch-app-btn-nav" class="cta-button secondary">Launch App</button>
+                  <button id="login-btn-nav" class="cta-button secondary">Login</button>
               </nav>
           </div>
       </header>
@@ -44,7 +44,7 @@
           <div class="landing-container">
               <h1>Your Personal Guide to Mental Well-being.</h1>
               <p>Sahay offers a safe and supportive space for students to navigate stress, anxiety, and the pressures of university life. Confidential, accessible, and always here for you.</p>
-              <button id="launch-app-btn" class="cta-button primary">Launch Sahay</button>
+              <button id="login-btn" class="cta-button primary">Login</button>
           </div>
       </section>
   
@@ -84,6 +84,66 @@
           </div>
       </footer>
     </div>
+
+    <div id="login-selection-page" class="login-selection-page hidden">
+      <div class="login-container">
+        <div class="logo">
+          <img src="logo-bg-rm.png" alt="Sahay Logo" />
+          <span>Sahay</span>
+        </div>
+        <h1>Choose Login Type</h1>
+        <p>Please select how you would like to login to Sahay</p>
+        <div class="login-buttons">
+          <button id="student-login-btn" class="cta-button primary">Login as Student</button>
+          <button id="admin-login-btn" class="cta-button secondary">Login as Admin</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="student-login-page" class="login-page hidden">
+      <div class="login-container">
+        <div class="logo">
+          <img src="logo-bg-rm.png" alt="Sahay Logo" />
+          <span>Sahay</span>
+        </div>
+        <h1>Student Login</h1>
+        <form id="student-login-form" class="login-form">
+          <div class="form-group">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="student-password">Password</label>
+            <input type="password" id="student-password" name="password" required />
+          </div>
+          <button type="submit" class="cta-button primary">Login</button>
+        </form>
+        <button id="back-to-login-selection-1" class="back-btn">← Back</button>
+      </div>
+    </div>
+
+    <div id="admin-login-page" class="login-page hidden">
+      <div class="login-container">
+        <div class="logo">
+          <img src="logo-bg-rm.png" alt="Sahay Logo" />
+          <span>Sahay</span>
+        </div>
+        <h1>Admin Login</h1>
+        <form id="admin-login-form" class="login-form">
+          <div class="form-group">
+            <label for="admin-email">Email</label>
+            <input type="email" id="admin-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" name="password" required />
+          </div>
+          <button type="submit" class="cta-button primary">Login</button>
+        </form>
+        <button id="back-to-login-selection-2" class="back-btn">← Back</button>
+      </div>
+    </div>
+
     <main id="app-root" class="app-container hidden">
       <aside class="sidebar">
         <div class="sidebar-top">
@@ -254,6 +314,23 @@
             <button id="logout-btn" class="cta-button secondary">Logout</button>
         </div>
       </section>
+    </main>
+
+    <main id="admin-root" class="admin-container hidden">
+      <div class="admin-dashboard">
+        <header class="admin-header">
+          <div class="logo">
+            <img src="logo-bg-rm.png" alt="Sahay Logo" />
+            <span>Sahay Admin</span>
+          </div>
+          <button id="admin-logout-btn" class="cta-button secondary">Logout</button>
+        </header>
+        <div class="admin-content">
+          <h1>Admin Dashboard</h1>
+          <p>Welcome to the Sahay admin panel. Here you can manage users, view analytics, and configure system settings.</p>
+          <!-- Admin functionality will be added here -->
+        </div>
+      </div>
     </main>
 
     <div id="crisis-modal" class="crisis-modal hidden">

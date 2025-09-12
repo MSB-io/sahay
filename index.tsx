@@ -28,21 +28,43 @@ import { GoogleGenAI, Chat } from "@google/genai";
 
 // --- ROUTING ---
 const landingPage = document.getElementById('landing-page');
+const loginSelectionPage = document.getElementById('login-selection-page');
+const studentLoginPage = document.getElementById('student-login-page');
+const adminLoginPage = document.getElementById('admin-login-page');
 const appRoot = document.getElementById('app-root');
+const adminRoot = document.getElementById('admin-root');
 
 function handleRouting() {
     const hash = window.location.hash;
 
+    // Hide all pages initially
+    landingPage?.classList.add('hidden');
+    loginSelectionPage?.classList.add('hidden');
+    studentLoginPage?.classList.add('hidden');
+    adminLoginPage?.classList.add('hidden');
+    appRoot?.classList.add('hidden');
+    adminRoot?.classList.add('hidden');
+
     if (hash === '#/UserDashboard') {
-        landingPage?.classList.add('hidden');
         appRoot?.classList.remove('hidden');
         if (appRoot && !appRoot.dataset.initialized) {
             initializeApp();
             appRoot.dataset.initialized = 'true';
         }
+    } else if (hash === '#/AdminDashboard') {
+        adminRoot?.classList.remove('hidden');
+        if (adminRoot && !adminRoot.dataset.initialized) {
+            initializeAdminApp();
+            adminRoot.dataset.initialized = 'true';
+        }
+    } else if (hash === '#/Login') {
+        loginSelectionPage?.classList.remove('hidden');
+    } else if (hash === '#/StudentLogin') {
+        studentLoginPage?.classList.remove('hidden');
+    } else if (hash === '#/AdminLogin') {
+        adminLoginPage?.classList.remove('hidden');
     } else { // Handles empty hash, '#/', or anything else as the landing page
         landingPage?.classList.remove('hidden');
-        appRoot?.classList.add('hidden');
         // Render landing page icons if not already done
         if (landingPage && !landingPage.dataset.initialized) {
             renderIcon(document.getElementById('feature-icon-1'), MessageCircleHeart);
@@ -64,11 +86,35 @@ function navigate(e: MouseEvent, path: string) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const launchBtn = document.getElementById('launch-app-btn');
-    const launchBtnNav = document.getElementById('launch-app-btn-nav');
+    const loginBtn = document.getElementById('login-btn');
+    const loginBtnNav = document.getElementById('login-btn-nav');
+    const studentLoginBtn = document.getElementById('student-login-btn');
+    const adminLoginBtn = document.getElementById('admin-login-btn');
+    const backToLoginSelection1 = document.getElementById('back-to-login-selection-1');
+    const backToLoginSelection2 = document.getElementById('back-to-login-selection-2');
+    const studentLoginForm = document.getElementById('student-login-form');
+    const adminLoginForm = document.getElementById('admin-login-form');
+    const adminLogoutBtn = document.getElementById('admin-logout-btn');
     
-    launchBtn?.addEventListener('click', (e) => navigate(e as MouseEvent, '/UserDashboard'));
-    launchBtnNav?.addEventListener('click', (e) => navigate(e as MouseEvent, '/UserDashboard'));
+    loginBtn?.addEventListener('click', (e) => navigate(e as MouseEvent, '/Login'));
+    loginBtnNav?.addEventListener('click', (e) => navigate(e as MouseEvent, '/Login'));
+    studentLoginBtn?.addEventListener('click', (e) => navigate(e as MouseEvent, '/StudentLogin'));
+    adminLoginBtn?.addEventListener('click', (e) => navigate(e as MouseEvent, '/AdminLogin'));
+    backToLoginSelection1?.addEventListener('click', (e) => navigate(e as MouseEvent, '/Login'));
+    backToLoginSelection2?.addEventListener('click', (e) => navigate(e as MouseEvent, '/Login'));
+    adminLogoutBtn?.addEventListener('click', (e) => navigate(e as MouseEvent, '/'));
+
+    studentLoginForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // For now, just navigate to UserDashboard (authentication logic can be added later)
+        window.location.hash = '/UserDashboard';
+    });
+
+    adminLoginForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // For now, just navigate to AdminDashboard (authentication logic can be added later)
+        window.location.hash = '/AdminDashboard';
+    });
 
     window.addEventListener('hashchange', handleRouting);
     
@@ -842,4 +888,9 @@ function initializeApp() {
             applyTheme('system');
         }
     });
+}
+
+function initializeAdminApp() {
+    // Admin dashboard initialization
+    console.log('Admin dashboard initialized');
 }
