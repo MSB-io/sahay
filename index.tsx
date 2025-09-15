@@ -24,9 +24,19 @@ import {
   MonitorSmartphone,
   LogOut,
   ShieldCheck,
-  MessagesSquare,
   BookHeart,
   Compass,
+  Zap,
+  Sparkles,
+  TrendingUp,
+  BedDouble,
+  School,
+  Users,
+  Globe,
+  Palette,
+  DatabaseZap,
+  Info,
+  AlertTriangle,
 } from 'lucide-react';
 import { GoogleGenAI, Modality } from "@google/genai";
 
@@ -238,7 +248,6 @@ const chatContainer = document.querySelector('.chat-container') as HTMLElement;
 const welcomeScreen = document.getElementById('welcome-screen') as HTMLDivElement;
 const promptStarterBtns = document.querySelectorAll('.prompt-starter');
 const chatHistoryList = document.getElementById('chat-history-list') as HTMLUListElement;
-const resourceLinks = document.querySelectorAll('.resource-link');
 const articleModal = document.getElementById('article-modal') as HTMLDivElement;
 const modalTitle = document.getElementById('modal-title') as HTMLHeadingElement;
 const modalBody = document.getElementById('modal-body') as HTMLDivElement;
@@ -248,6 +257,12 @@ const voiceModeCloseBtn = document.getElementById('voice-mode-close-btn') as HTM
 const voiceVisualizer = document.getElementById('voice-visualizer') as HTMLDivElement;
 const voiceTranscript = document.getElementById('voice-transcript') as HTMLParagraphElement;
 const themeButtons = document.querySelectorAll('.theme-btn');
+const settingsNavItems = document.querySelectorAll('.settings-nav-item');
+const settingsSections = document.querySelectorAll('.settings-section');
+const clearHistoryBtn = document.getElementById('clear-history-btn') as HTMLButtonElement;
+const confirmModal = document.getElementById('confirm-modal') as HTMLDivElement;
+const confirmCancelBtn = document.getElementById('confirm-cancel-btn') as HTMLButtonElement;
+const confirmActionBtn = document.getElementById('confirm-action-btn') as HTMLButtonElement;
 
 
 // --- APPLICATION STATE ---
@@ -937,6 +952,14 @@ function loadTheme() {
     applyTheme(savedTheme);
 }
 
+function handleClearHistory() {
+    localStorage.removeItem(HISTORY_STORAGE_KEY);
+    chatHistory = [];
+    renderHistory();
+    resetChat();
+    confirmModal.classList.add('hidden');
+}
+
 // --- MOBILE SIDEBAR ---
 const openMobileSidebar = () => {
     document.body.classList.add('sidebar-open');
@@ -957,7 +980,6 @@ function initializeApp() {
     renderIcon(document.getElementById('home-icon'), Home);
     renderIcon(document.getElementById('resources-icon'), BookOpen);
     renderIcon(document.getElementById('settings-icon'), Settings);
-    renderIcon(document.getElementById('profile-icon-header'), User, { size: 20 });
     renderIcon(document.getElementById('mic-btn-icon'), Mic);
     renderIcon(document.getElementById('modal-close-icon'), X);
     renderIcon(document.getElementById('crisis-modal-close-icon'), X);
@@ -966,6 +988,31 @@ function initializeApp() {
     renderIcon(document.getElementById('theme-icon-dark'), Moon);
     renderIcon(document.getElementById('theme-icon-system'), MonitorSmartphone);
     renderIcon(document.getElementById('logout-icon'), LogOut);
+    renderIcon(document.getElementById('settings-icon-profile'), User);
+    renderIcon(document.getElementById('settings-icon-appearance'), Palette);
+    renderIcon(document.getElementById('settings-icon-data'), DatabaseZap);
+    renderIcon(document.getElementById('settings-icon-about'), Info);
+    renderIcon(document.getElementById('confirm-icon'), AlertTriangle, { size: 32 });
+
+    // --- RENDER RESOURCE ICONS ---
+    renderIcon(document.getElementById('featured-resource-icon'), Compass, { size: 60 });
+    const resourceIcons: { [key: string]: React.ElementType } = {
+      anxiety: ShieldCheck,
+      depression: BookHeart,
+      burnout: Zap,
+      mindfulness: Sparkles,
+      resilience: TrendingUp,
+      sleep: BedDouble,
+      socialAnxiety: Users,
+      loneliness: Globe,
+    };
+
+    Object.entries(resourceIcons).forEach(([key, IconComponent]) => {
+      const element = document.getElementById(`resource-icon-${key}`);
+      if (element) {
+        renderIcon(element, IconComponent, { size: 24 });
+      }
+    });
 
 
     loadHistoryFromStorage();
@@ -1034,8 +1081,9 @@ function initializeApp() {
         });
     });
     
-    resourceLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
+    const resourceCards = document.querySelectorAll('#resources-page .resource-card');
+    resourceCards.forEach(card => {
+        card.addEventListener('click', (e) => {
             e.preventDefault();
             const articleId = (e.currentTarget as HTMLElement).dataset.article;
             if (articleId && articleContent[articleId]) {
@@ -1067,6 +1115,39 @@ function initializeApp() {
         });
     });
     
+    settingsNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            
+            settingsNavItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+            
+            settingsSections.forEach(section => {
+                if (section.id === targetId) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    clearHistoryBtn.addEventListener('click', () => {
+        confirmModal.classList.remove('hidden');
+    });
+
+    confirmCancelBtn.addEventListener('click', () => {
+        confirmModal.classList.add('hidden');
+    });
+
+    confirmActionBtn.addEventListener('click', handleClearHistory);
+
+    confirmModal.addEventListener('click', (e) => {
+        if (e.target === confirmModal) {
+            confirmModal.classList.add('hidden');
+        }
+    });
+
     const logoutBtn = document.getElementById('logout-btn');
     logoutBtn?.addEventListener('click', (e) => {
         e.preventDefault();

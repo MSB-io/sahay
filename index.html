@@ -257,9 +257,6 @@
             <button id="mobile-sidebar-toggle-btn" class="icon-btn mobile-sidebar-toggle-btn" aria-label="Open menu">
               <span class="icon-container" id="mobile-sidebar-toggle-icon"></span>
             </button>
-            <button id="profile-btn" class="icon-btn profile-btn" aria-label="User profile">
-                <span class="icon-container" id="profile-icon-header"></span>
-            </button>
         </header>
         <section class="chat-container">
           <div id="welcome-screen" class="welcome-screen">
@@ -300,20 +297,53 @@
               <p class="resources-intro">Explore these curated articles and guides to learn more about mental well-being. Knowledge is a powerful tool for self-care and growth.</p>
           </div>
 
+          <div class="featured-resource-wrapper">
+            <div class="resource-card featured" data-article="academicStress">
+              <div class="featured-content">
+                  <div>
+                    <span class="featured-badge">Featured Guide</span>
+                    <h3>Navigating Academic Stress</h3>
+                    <p class="featured-intro">This guide offers practical strategies for students to handle the pressures of exams, deadlines, and performance.</p>
+                    <div class="featured-takeaways">
+                        <h4>What you'll learn:</h4>
+                        <ul>
+                            <li>Time management techniques</li>
+                            <li>How to handle performance anxiety</li>
+                            <li>Ways to build a support system</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <a href="#" class="featured-link" data-article="academicStress">Read The Guide &rarr;</a>
+              </div>
+              <div class="featured-icon">
+                <span class="icon-container" id="featured-resource-icon"></span>
+              </div>
+            </div>
+          </div>
+
           <div class="resources-category">
               <h2 class="category-title">Core Concepts</h2>
               <div class="resources-grid">
-                  <div class="resource-card">
+                  <div class="resource-card" data-article="anxiety">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-anxiety"></span>
+                      </div>
                       <h3>Understanding Anxiety</h3>
                       <p>Learn the symptoms, causes, and effective strategies for managing anxiety in daily life.</p>
                       <a href="#" class="resource-link" data-article="anxiety">Read More &rarr;</a>
                   </div>
-                  <div class="resource-card">
+                  <div class="resource-card" data-article="depression">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-depression"></span>
+                      </div>
                       <h3>Coping with Depression</h3>
                       <p>Explore practical advice, from lifestyle adjustments to when it's important to seek professional help.</p>
                        <a href="#" class="resource-link" data-article="depression">Read More &rarr;</a>
                   </div>
-                   <div class="resource-card">
+                   <div class="resource-card" data-article="burnout">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-burnout"></span>
+                      </div>
                       <h3>What is Burnout?</h3>
                       <p>Recognize the signs of burnout and learn strategies to prevent and recover from it.</p>
                        <a href="#" class="resource-link" data-article="burnout">Read More &rarr;</a>
@@ -324,17 +354,26 @@
           <div class="resources-category">
               <h2 class="category-title">Practical Skills</h2>
               <div class="resources-grid">
-                  <div class="resource-card">
+                  <div class="resource-card" data-article="mindfulness">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-mindfulness"></span>
+                      </div>
                       <h3>Mindfulness for Beginners</h3>
                       <p>A simple introduction to mindfulness practices to reduce stress and improve focus.</p>
                       <a href="#" class="resource-link" data-article="mindfulness">Read More &rarr;</a>
                   </div>
-                  <div class="resource-card">
+                  <div class="resource-card" data-article="resilience">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-resilience"></span>
+                      </div>
                       <h3>Building Resilience</h3>
                       <p>Discover techniques to build mental and emotional strength to navigate life's challenges.</p>
                        <a href="#" class="resource-link" data-article="resilience">Read More &rarr;</a>
                   </div>
-                   <div class="resource-card">
+                   <div class="resource-card" data-article="sleep">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-sleep"></span>
+                      </div>
                       <h3>Better Sleep Hygiene</h3>
                       <p>Understand the connection between sleep and mental health, with tips for improving sleep quality.</p>
                        <a href="#" class="resource-link" data-article="sleep">Read More &rarr;</a>
@@ -345,17 +384,18 @@
           <div class="resources-category">
               <h2 class="category-title">Student Life</h2>
               <div class="resources-grid">
-                 <div class="resource-card">
-                      <h3>Navigating Academic Stress</h3>
-                      <p>Strategies for students to handle the pressures of exams, deadlines, and performance.</p>
-                       <a href="#" class="resource-link" data-article="academicStress">Read More &rarr;</a>
-                  </div>
-                   <div class="resource-card">
+                   <div class="resource-card" data-article="socialAnxiety">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-socialAnxiety"></span>
+                      </div>
                       <h3>Social Anxiety at University</h3>
                       <p>Tips for managing social fears and building meaningful connections on campus.</p>
                        <a href="#" class="resource-link" data-article="socialAnxiety">Read More &rarr;</a>
                   </div>
-                   <div class="resource-card">
+                   <div class="resource-card" data-article="loneliness">
+                      <div class="resource-icon-wrapper">
+                        <span class="icon-container" id="resource-icon-loneliness"></span>
+                      </div>
                       <h3>Combating Loneliness</h3>
                       <p>Understand why loneliness happens at university and discover ways to connect with others.</p>
                        <a href="#" class="resource-link" data-article="loneliness">Read More &rarr;</a>
@@ -365,35 +405,133 @@
         </section>
 
         <section id="settings-page" class="settings-page hidden">
-          <div class="settings-header">
-            <h1>Settings</h1>
-          </div>
-          <div class="settings-card">
-              <h3>Appearance</h3>
-              <p>Customize the look and feel of the application.</p>
-              <div class="theme-selector">
-                  <button class="theme-btn" data-theme="light" aria-label="Switch to light theme">
-                      <span class="icon-container" id="theme-icon-light"></span>
-                      <span>Light</span>
-                  </button>
-                  <button class="theme-btn" data-theme="dark" aria-label="Switch to dark theme">
-                       <span class="icon-container" id="theme-icon-dark"></span>
-                      <span>Dark</span>
-                  </button>
-                  <button class="theme-btn" data-theme="system" aria-label="Switch to system theme">
-                       <span class="icon-container" id="theme-icon-system"></span>
-                      <span>System</span>
-                  </button>
-              </div>
-          </div>
-           <div class="settings-card">
-              <h3>Account</h3>
-              <p>Log out of your current session.</p>
-              <button id="logout-btn" class="logout-btn">
-                  <span class="icon-container" id="logout-icon"></span>
-                  <span>Log Out</span>
-              </button>
-          </div>
+            <div class="settings-header">
+              <h1>Settings</h1>
+            </div>
+            <div class="settings-container">
+                <nav class="settings-nav">
+                    <button class="settings-nav-item active" data-target="settings-profile">
+                        <span class="icon-container" id="settings-icon-profile"></span>
+                        <span>Profile</span>
+                    </button>
+                    <button class="settings-nav-item" data-target="settings-appearance">
+                        <span class="icon-container" id="settings-icon-appearance"></span>
+                        <span>Appearance</span>
+                    </button>
+                    <button class="settings-nav-item" data-target="settings-data">
+                         <span class="icon-container" id="settings-icon-data"></span>
+                        <span>Data & Privacy</span>
+                    </button>
+                    <button class="settings-nav-item" data-target="settings-about">
+                         <span class="icon-container" id="settings-icon-about"></span>
+                        <span>About</span>
+                    </button>
+                </nav>
+                <div class="settings-content">
+                    <div id="settings-profile" class="settings-section">
+                        <div class="settings-section-header">
+                            <h2>Profile</h2>
+                            <p>Manage your account details.</p>
+                        </div>
+                        <div class="settings-section-card">
+                            <div class="setting-item">
+                                <div class="setting-item-label">
+                                    <h3>Full Name</h3>
+                                    <p class="profile-value">Alex Doe</p>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-item-label">
+                                    <h3>Email Address</h3>
+                                    <p class="profile-value">alex.doe@example.com</p>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                 <div class="setting-item-label">
+                                    <h3>Account</h3>
+                                    <p>Log out of your current session.</p>
+                                </div>
+                                <div class="setting-item-control">
+                                    <button id="logout-btn" class="logout-btn">
+                                        <span class="icon-container" id="logout-icon"></span>
+                                        <span>Log Out</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settings-appearance" class="settings-section hidden">
+                        <div class="settings-section-header">
+                            <h2>Appearance</h2>
+                            <p>Customize the look and feel of the application.</p>
+                        </div>
+                        <div class="settings-section-card">
+                            <div class="setting-item">
+                                <div class="setting-item-label">
+                                    <h3>Theme</h3>
+                                    <p>Select your preferred interface theme. "System" will match your device's settings.</p>
+                                </div>
+                                <div class="setting-item-control">
+                                    <div class="theme-selector">
+                                        <button class="theme-btn" data-theme="light" aria-label="Switch to light theme">
+                                            <span class="icon-container" id="theme-icon-light"></span>
+                                            <span>Light</span>
+                                        </button>
+                                        <button class="theme-btn" data-theme="dark" aria-label="Switch to dark theme">
+                                             <span class="icon-container" id="theme-icon-dark"></span>
+                                            <span>Dark</span>
+                                        </button>
+                                        <button class="theme-btn" data-theme="system" aria-label="Switch to system theme">
+                                             <span class="icon-container" id="theme-icon-system"></span>
+                                            <span>System</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div id="settings-data" class="settings-section hidden">
+                        <div class="settings-section-header">
+                            <h2>Data & Privacy</h2>
+                            <p>Manage your application data.</p>
+                        </div>
+                        <div class="settings-section-card">
+                             <div class="setting-item">
+                                <div class="setting-item-label">
+                                    <h3>Chat History</h3>
+                                    <p>Your chat history is stored locally on this device. Clearing it will permanently delete all your past conversations.</p>
+                                </div>
+                                <div class="setting-item-control">
+                                    <button id="clear-history-btn" class="btn-danger">Clear Chat History</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settings-about" class="settings-section hidden">
+                        <div class="settings-section-header">
+                            <h2>About Sahay</h2>
+                             <p>Your private, AI-powered companion for navigating the pressures of student life.</p>
+                        </div>
+                        <div class="settings-section-card">
+                            <div class="setting-item">
+                                <div class="setting-item-label">
+                                    <h3>Send Feedback</h3>
+                                    <p>Have a suggestion or found a bug? We'd love to hear from you.</p>
+                                </div>
+                                <div class="setting-item-control">
+                                    <a href="mailto:feedback@sahay.app" class="btn-secondary">Send Feedback</a>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-item-label">
+                                    <h3>Disclaimer</h3>
+                                    <p>Sahay is an AI assistant and not a replacement for professional medical advice, diagnosis, or treatment. Please consult a qualified health professional for any medical concerns.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
       </div>
     </main>
@@ -432,6 +570,20 @@
             <h2 id="modal-title"></h2>
             <div id="modal-body"></div>
         </div>
+    </div>
+    
+    <div id="confirm-modal" class="confirm-modal hidden">
+      <div class="confirm-content">
+          <div class="confirm-icon">
+             <span class="icon-container" id="confirm-icon"></span>
+          </div>
+          <h2 id="confirm-title">Are you sure?</h2>
+          <p id="confirm-text">This action cannot be undone.</p>
+          <div class="confirm-actions">
+              <button id="confirm-cancel-btn" class="btn-secondary">Cancel</button>
+              <button id="confirm-action-btn" class="btn-danger">Clear</button>
+          </div>
+      </div>
     </div>
 
     <section id="voice-mode-screen" class="voice-mode-screen hidden">
