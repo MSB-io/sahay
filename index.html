@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sahay</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script type="importmap">
 {
   "imports": {
@@ -22,310 +23,377 @@
 }
 </script>
     <script type="module" src="/index.tsx"></script>
-    <link rel="stylesheet" href="/index.css">
-</head>
-
-<body>
+  </head>
+  <body>
     <div id="landing-page" class="hidden">
-        <header class="landing-header">
+      <header class="landing-header">
+          <div class="landing-container">
+              <div class="logo">
+                  <img src="logo-bg-rm.png" alt="Sahay Logo" />
+                  <span>Sahay</span>
+              </div>
+              <nav class="landing-nav">
+                  <a href="#how-it-works">How It Works</a>
+                  <a href="#features">Features</a>
+                  <a href="#privacy">Privacy</a>
+                  <button id="launch-app-btn-nav" class="cta-button secondary">Launch App</button>
+              </nav>
+              <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Open navigation menu">
+                  <span class="icon-container" id="mobile-nav-icon"></span>
+              </button>
+          </div>
+      </header>
+  
+      <main class="landing-main">
+          <section class="hero-section">
+              <div class="hero-content">
+                  <h1>A quiet space for your thoughts.</h1>
+                  <p>Sahay is your private, AI-powered companion for navigating the pressures of student life. Talk through challenges, learn coping skills, and find your balance—anytime, anywhere.</p>
+                  <div class="hero-cta">
+                      <button id="launch-app-btn" class="cta-button primary">Launch Sahay</button>
+                      <a href="#features" class="cta-link">Explore Features &rarr;</a>
+                  </div>
+              </div>
+              <div class="hero-bg">
+                <svg viewBox="0 0 1024 1024" class="hero-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="blur1">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="60"></feGaussianBlur>
+                        </filter>
+                        <filter id="blur2">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="80"></feGaussianBlur>
+                        </filter>
+                    </defs>
+                    <circle cx="512" cy="512" r="400" fill="rgba(251, 146, 60, 0.15)" filter="url(#blur1)" class="blob1"></circle>
+                    <circle cx="300" cy="400" r="350" fill="rgba(252, 211, 77, 0.1)" filter="url(#blur2)" class="blob2"></circle>
+                    <circle cx="700" cy="600" r="300" fill="rgba(251, 146, 60, 0.1)" filter="url(#blur1)" class="blob3"></circle>
+                </svg>
+              </div>
+          </section>
+  
+          <section id="how-it-works" class="how-it-works-section">
             <div class="landing-container">
-                <div class="logo">
-                    <img src="logo-bg-rm.png" alt="Sahay Logo" />
-                    <span class="logo-text-bold">सहाय</span>
+                <h2>A Clear Path to Support</h2>
+                <p class="section-subtitle">Understand how Sahay guides you towards a healthier mindset in three simple steps.</p>
+                <div class="how-it-works-steps">
+                    <!-- Step 1 -->
+                    <div class="how-it-works-step">
+                        <div class="step-text-content">
+                            <span class="step-number">01</span>
+                            <h3>Speak Freely, in Confidence</h3>
+                            <p>Start a conversation anytime, anywhere. Whether you type or talk, Sahay provides a private, judgment-free space to process your thoughts and feelings.</p>
+                        </div>
+                        <div class="step-visual-content">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                    <div class="mock-header">
+                                        <span class="mock-logo-sm">सहाय</span>
+                                    </div>
+                                    <div class="mock-chat-bubble ai">How can I help you today?</div>
+                                    <div class="mock-prompt">I'm feeling stressed</div>
+                                    <div class="mock-prompt">Let's talk about exams</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="how-it-works-step reverse">
+                        <div class="step-text-content">
+                            <span class="step-number">02</span>
+                            <h3>Discover Tools for Well-being</h3>
+                            <p>Explore a curated library of articles and exercises. Learn evidence-based techniques for managing stress, improving sleep, and building resilience, all tailored for student life.</p>
+                        </div>
+                        <div class="step-visual-content">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                     <div class="mock-header">
+                                        <h4>Resource Library</h4>
+                                    </div>
+                                    <div class="mock-resource-card">
+                                        <h5>Understanding Anxiety</h5>
+                                        <p>Learn the symptoms & causes...</p>
+                                    </div>
+                                    <div class="mock-resource-card">
+                                        <h5>Building Resilience</h5>
+                                        <p>Discover techniques to build...</p>
+                                    </div>
+                                    <div class="mock-resource-card">
+                                        <h5>Better Sleep Hygiene</h5>
+                                        <p>Tips for improving sleep quality...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="how-it-works-step">
+                        <div class="step-text-content">
+                            <span class="step-number">03</span>
+                            <h3>Gain Clarity and Build Skills</h3>
+                            <p>Receive empathetic guidance and practical insights from your AI companion. Develop coping strategies and find a clearer path forward, one conversation at a time.</p>
+                        </div>
+                        <div class="step-visual-content">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                     <div class="mock-header">
+                                        <h5>Mindfulness for Beginners</h5>
+                                    </div>
+                                    <div class="mock-article-text">
+                                        <div class="line short"></div>
+                                        <div class="line long"></div>
+                                        <div class="line medium"></div>
+                                        <div class="line long"></div>
+                                        <br/>
+                                        <div class="line short"></div>
+                                        <div class="line long"></div>
+                                        <div class="line medium"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <nav class="landing-nav">
-                    <a href="#features">Features</a>
-                    <button id="login-btn-nav" class="cta-button secondary">Login</button>
-                </nav>
-            </div>
-        </header>
-
-        <section class="hero-section">
-            <div class="landing-container">
-                <h1>Your Personal Guide to Mental Well-being.</h1>
-                <p>Sahay offers a safe and supportive space for Indian students to navigate academic pressure, career stress, family expectations, and the challenges of student life. Confidential, accessible, and always here for you.</p>
-                <button id="login-btn" class="cta-button primary">Login</button>
             </div>
         </section>
-
-        <section id="features" class="features-section">
-            <div class="landing-container">
-                <h2>A comprehensive toolkit for your mind.</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <span class="icon-container" id="feature-icon-1"></span>
-                        </div>
-                        <h3>Confidential Conversations</h3>
-                        <p>Talk about academic pressure, career anxiety, family expectations, and personal struggles with an empathetic AI assistant, available 24/7 in a secure environment.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <span class="icon-container" id="feature-icon-2"></span>
-                        </div>
-                        <h3>Curated Resource Library</h3>
-                        <p>Access articles and guides tailored for Indian students covering JEE/NEET stress, career guidance, relationship issues, and building resilience in competitive environments.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon-wrapper">
-                            <span class="icon-container" id="feature-icon-3"></span>
-                        </div>
-                        <h3>Real-time Voice Mode</h3>
-                        <p>Engage in hands-free voice conversations in Hindi or English for immediate support whenever you need it, understanding Indian cultural context.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="landing-footer">
-            <div class="landing-container">
-                <p>&copy; 2024 Sahay. All rights reserved.</p>
-                <p class="disclaimer">Disclaimer: Sahay is an AI assistant and not a replacement for professional
-                    medical advice, diagnosis, or treatment. Please consult a qualified mental health professional, psychiatrist, or counselor for any medical concerns. For emergencies, contact your local emergency services.</p>
-            </div>
-        </footer>
+  
+          <section id="features" class="features-section">
+              <div class="landing-container">
+                  <h2>A Toolkit Designed For You</h2>
+                  <div class="features-grid">
+                      <div class="feature-card">
+                          <div class="feature-icon-wrapper">
+                             <span class="icon-container" id="feature-icon-1"></span>
+                          </div>
+                          <h3>24/7 AI Companion</h3>
+                          <p>Vent, reflect, or explore your feelings. Available whenever you need it, ensuring you're never without support.</p>
+                      </div>
+                      <div class="feature-card">
+                          <div class="feature-icon-wrapper">
+                             <span class="icon-container" id="feature-icon-2"></span>
+                          </div>
+                          <h3>Guided Wellness Library</h3>
+                          <p>Learn practical, evidence-based techniques for managing stress, improving sleep, and building healthy habits.</p>
+                      </div>
+                      <div class="feature-card">
+                          <div class="feature-icon-wrapper">
+                             <span class="icon-container" id="feature-icon-3"></span>
+                          </div>
+                          <h3>Voice Conversations</h3>
+                          <p>Prefer to talk? Engage in natural, hands-free voice conversations for immediate, on-the-go support.</p>
+                      </div>
+                      <div class="feature-card">
+                          <div class="feature-icon-wrapper">
+                             <span class="icon-container" id="feature-icon-4"></span>
+                          </div>
+                          <h3>Absolute Privacy</h3>
+                          <p>Your conversations are secure and confidential. We are committed to protecting your data and your trust.</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+  
+          <section id="privacy" class="privacy-section">
+              <div class="landing-container">
+                   <div class="privacy-content">
+                      <h2>Your Privacy is Our Priority</h2>
+                      <p>Sahay is built on a foundation of trust. Your personal conversations are not shared. We use anonymized, aggregated data only to understand student well-being trends at a high level, helping institutions create better support systems for everyone.</p>
+                   </div>
+              </div>
+          </section>
+  
+          <section class="final-cta-section">
+              <div class="landing-container">
+                  <h2>Ready to Find Your Balance?</h2>
+                  <p>Take the first step towards a healthier mindset. Sahay is free for students.</p>
+                  <button id="launch-app-btn-final" class="cta-button primary">Launch Sahay Now</button>
+              </div>
+          </section>
+      </main>
+  
+      <footer class="landing-footer">
+          <div class="landing-container">
+               <p>&copy; 2024 Sahay. All rights reserved.</p>
+               <p class="disclaimer">Disclaimer: Sahay is an AI assistant and not a replacement for professional medical advice, diagnosis, or treatment. Please consult a qualified health professional for any medical concerns.</p>
+          </div>
+      </footer>
     </div>
-
-    <div id="login-selection-page" class="login-selection-page hidden">
-        <div class="login-container">
-            <div class="logo">
-                <img src="logo-bg-rm.png" alt="Sahay Logo" />
-                <span>Sahay</span>
-            </div>
-            <h1>Choose Login Type</h1>
-            <p>Please select how you would like to login to Sahay</p>
-            <div class="login-buttons">
-                <button id="student-login-btn" class="cta-button primary">Login as Student</button>
-                <button id="admin-login-btn" class="cta-button secondary">Login as Admin</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="student-login-page" class="login-page hidden">
-        <div class="login-container">
-            <div class="logo">
-                <img src="logo-bg-rm.png" alt="Sahay Logo" />
-                <span>Sahay</span>
-            </div>
-            <h1>Student Login</h1>
-            <form id="student-login-form" class="login-form">
-                <div class="form-group">
-                    <label for="student-email">Email</label>
-                    <input type="email" id="student-email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="student-password">Password</label>
-                    <input type="password" id="student-password" name="password" required />
-                </div>
-                <button type="submit" class="cta-button primary">Login</button>
-            </form>
-            <button id="back-to-login-selection-1" class="back-btn">← Back</button>
-        </div>
-    </div>
-
-    <div id="admin-login-page" class="login-page hidden">
-        <div class="login-container">
-            <div class="logo">
-                <img src="logo-bg-rm.png" alt="Sahay Logo" />
-                <span>Sahay</span>
-            </div>
-            <h1>Admin Login</h1>
-            <form id="admin-login-form" class="login-form">
-                <div class="form-group">
-                    <label for="admin-email">Email</label>
-                    <input type="email" id="admin-email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="admin-password">Password</label>
-                    <input type="password" id="admin-password" name="password" required />
-                </div>
-                <button type="submit" class="cta-button primary">Login</button>
-            </form>
-            <button id="back-to-login-selection-2" class="back-btn">← Back</button>
-        </div>
-    </div>
-
     <main id="app-root" class="app-container hidden">
-        <aside class="sidebar">
-            <div class="sidebar-top">
-                <div class="sidebar-header">
-                    <img src="logo-bg-rm.png" alt="App logo" class="logo-icon" />
-                    <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="Toggle sidebar">
-                        <span class="icon-container" id="sidebar-toggle-icon"></span>
-                    </button>
-                </div>
-                <nav class="sidebar-nav">
-                    <button id="home-btn" class="nav-item">
-                        <span class="icon-container icon" id="home-icon"></span>
-                        <span class="nav-text">Home</span>
-                    </button>
-                    <button id="resources-btn" class="nav-item">
-                        <span class="icon-container icon" id="resources-icon"></span>
-                        <span class="nav-text">Resources</span>
-                    </button>
-                    <button id="settings-btn" class="nav-item">
-                        <span class="icon-container icon" id="settings-icon"></span>
-                        <span class="nav-text">Settings</span>
-                    </button>
-                </nav>
-            </div>
-
-            <div class="sidebar-history">
-                <div class="history-header">
-                    <span class="nav-text">Recent</span>
-                </div>
-                <ul id="chat-history-list" class="history-list">
-                    <!-- Chat history items will be added here -->
-                </ul>
-            </div>
-        </aside>
-        <section class="chat-container">
-            <header class="chat-header">
-                <button id="profile-btn" class="icon-btn profile-btn" aria-label="User profile">
-                    <span class="icon-container" id="profile-icon-header"></span>
+      <div id="sidebar-overlay" class="sidebar-overlay hidden"></div>
+      <aside class="sidebar">
+        <div class="sidebar-top">
+           <div class="sidebar-header">
+                <img src="logo-bg-rm.png" alt="App logo" class="logo-icon" />
+                <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+                   <span class="icon-container" id="sidebar-toggle-icon"></span>
                 </button>
-            </header>
-            <div id="welcome-screen" class="welcome-screen">
-                <h1 class="welcome-logo-text">सहाय</h1>
-                <h2>Namaste! How can I help you today?</h2>
-                <div class="prompt-starters-grid">
-                    <button class="prompt-starter">JEE/NEET stress is overwhelming</button>
-                    <button class="prompt-starter">Family pressure about career</button>
-                    <button class="prompt-starter">Worried about placements</button>
-                    <button class="prompt-starter">Feeling homesick at college</button>
-                </div>
-            </div>
-            <div id="chat-messages" class="chat-messages hidden">
-                <!-- Chat messages will be dynamically inserted here -->
-            </div>
-            <div class="chat-input-area">
-                <form id="chat-form" class="chat-form">
-                    <input type="text" id="chat-input" placeholder="Ask anything" aria-label="Chat message"
-                        autocomplete="off" />
-                    <button type="button" class="icon-btn" id="mic-btn" aria-label="Use microphone">
-                        <span class="icon-container" id="mic-btn-icon"></span>
-                    </button>
-                    <button type="button" class="icon-btn" id="action-btn" aria-label="Voice mode">
-                        <span class="icon-container" id="action-btn-icon"></span>
-                    </button>
-                </form>
-            </div>
-        </section>
+           </div>
+           <nav class="sidebar-nav">
+               <button id="home-btn" class="nav-item">
+                   <span class="icon-container icon" id="home-icon"></span>
+                   <span class="nav-text">Home</span>
+               </button>
+               <button id="resources-btn" class="nav-item">
+                   <span class="icon-container icon" id="resources-icon"></span>
+                   <span class="nav-text">Resources</span>
+               </button>
+               <button id="settings-btn" class="nav-item">
+                   <span class="icon-container icon" id="settings-icon"></span>
+                   <span class="nav-text">Settings</span>
+               </button>
+           </nav>
+        </div>
 
-        <section id="resources-page" class="resources-page hidden">
-            <div class="resources-header">
-                <h1>Resource Library</h1>
-                <p class="resources-intro">Explore these curated articles and guides specifically designed for Indian students to navigate academic pressure, cultural expectations, and personal growth.</p>
+        <div class="sidebar-history">
+            <div class="history-header">
+                <span class="nav-text">Recent</span>
             </div>
+            <ul id="chat-history-list" class="history-list">
+                <!-- Chat history items will be added here -->
+            </ul>
+        </div>
+      </aside>
+      <section class="chat-container">
+        <header class="chat-header">
+            <button id="mobile-sidebar-toggle-btn" class="icon-btn mobile-sidebar-toggle-btn" aria-label="Open menu">
+              <span class="icon-container" id="mobile-sidebar-toggle-icon"></span>
+            </button>
+            <button id="profile-btn" class="icon-btn profile-btn" aria-label="User profile">
+                <span class="icon-container" id="profile-icon-header"></span>
+            </button>
+        </header>
+        <div id="welcome-screen" class="welcome-screen">
+          <h1 class="welcome-logo-text">सहाय</h1>
+          <h2>Hello! How can I help you today?</h2>
+          <div class="prompt-starters-grid">
+            <button class="prompt-starter">I'm feeling stressed</button>
+            <button class="prompt-starter">Let's talk about exams</button>
+            <button class="prompt-starter">I'm having trouble sleeping</button>
+            <button class="prompt-starter">I need to vent</button>
+          </div>
+        </div>
+        <div id="chat-messages" class="chat-messages hidden">
+          <!-- Chat messages will be dynamically inserted here -->
+        </div>
+        <div class="chat-input-area">
+          <form id="chat-form" class="chat-form">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Ask anything"
+              aria-label="Chat message"
+              autocomplete="off"
+            />
+            <button type="button" class="icon-btn" id="mic-btn" aria-label="Use microphone">
+                <span class="icon-container" id="mic-btn-icon"></span>
+            </button>
+            <button type="button" class="icon-btn" id="action-btn" aria-label="Voice mode">
+                <span class="icon-container" id="action-btn-icon"></span>
+            </button>
+          </form>
+        </div>
+      </section>
 
-            <div class="resources-category">
-                <h2 class="category-title">Academic & Career Stress</h2>
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <h3>Managing JEE/NEET Pressure</h3>
-                        <p>Strategies to cope with competitive exam stress, parental expectations, and maintaining mental health during preparation.</p>
-                        <a href="#" class="resource-link" data-article="competitiveExams">Read More &rarr;</a>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Placement Anxiety & Career Fears</h3>
-                        <p>Navigate job market uncertainties, interview stress, and building confidence for your career journey.</p>
-                        <a href="#" class="resource-link" data-article="placementStress">Read More &rarr;</a>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Academic Burnout Recovery</h3>
-                        <p>Recognize signs of academic burnout common in Indian education system and learn recovery strategies.</p>
-                        <a href="#" class="resource-link" data-article="academicBurnout">Read More &rarr;</a>
-                    </div>
-                </div>
-            </div>
+      <section id="resources-page" class="resources-page hidden">
+        <div class="resources-header">
+            <h1>Resource Library</h1>
+            <p class="resources-intro">Explore these curated articles and guides to learn more about mental well-being. Knowledge is a powerful tool for self-care and growth.</p>
+        </div>
 
-            <div class="resources-category">
-                <h2 class="category-title">Family & Cultural Challenges</h2>
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <h3>Dealing with Family Expectations</h3>
-                        <p>Balance personal aspirations with family pressure and communicate your choices effectively.</p>
-                        <a href="#" class="resource-link" data-article="familyPressure">Read More &rarr;</a>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Financial Stress & Education</h3>
-                        <p>Cope with financial pressures of education, scholarship stress, and economic anxiety affecting studies.</p>
-                        <a href="#" class="resource-link" data-article="financialStress">Read More &rarr;</a>
-                    </div>
-                    <div class="resource-card">
-                        <h3>Hostel Life & Homesickness</h3>
-                        <p>Adapt to hostel life, manage homesickness, and build new relationships away from home.</p>
-                        <a href="#" class="resource-link" data-article="hostelLife">Read More &rarr;</a>
-                    </div>
+        <div class="resources-category">
+            <h2 class="category-title">Core Concepts</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Understanding Anxiety</h3>
+                    <p>Learn the symptoms, causes, and effective strategies for managing anxiety in daily life.</p>
+                    <a href="#" class="resource-link" data-article="anxiety">Read More &rarr;</a>
                 </div>
-            </div>
-            
-            <div class="resources-category">
-                <h2 class="category-title">Personal Well-being</h2>
-                <div class="resources-grid">
-                   <div class="resource-card">
-                        <h3>Understanding Anxiety & Depression</h3>
-                        <p>Recognize mental health symptoms and learn coping strategies suitable for Indian cultural context.</p>
-                        <a href="#" class="resource-link" data-article="anxiety">Read More &rarr;</a>
-                    </div>
-                     <div class="resource-card">
-                        <h3>Mindfulness & Meditation</h3>
-                        <p>Incorporate traditional Indian mindfulness practices and modern techniques for mental peace.</p>
-                        <a href="#" class="resource-link" data-article="mindfulness">Read More &rarr;</a>
-                    </div>
-                     <div class="resource-card">
-                        <h3>Building Resilience</h3>
-                        <p>Develop emotional strength to handle academic and personal challenges in Indian society.</p>
-                        <a href="#" class="resource-link" data-article="resilience">Read More &rarr;</a>
-                    </div>
+                <div class="resource-card">
+                    <h3>Coping with Depression</h3>
+                    <p>Explore practical advice, from lifestyle adjustments to when it's important to seek professional help.</p>
+                     <a href="#" class="resource-link" data-article="depression">Read More &rarr;</a>
                 </div>
-            </div>
-        </section>        <section id="settings-page" class="settings-page hidden">
-            <div class="settings-header">
-                <h1>Settings</h1>
-            </div>
-            <div class="settings-card">
-                <h3>Appearance</h3>
-                <p>Customize the look and feel of the application.</p>
-                <div class="theme-selector">
-                    <button class="theme-btn" data-theme="light" aria-label="Switch to light theme">
-                        <span class="icon-container" id="theme-icon-light"></span>
-                        <span>Light</span>
-                    </button>
-                    <button class="theme-btn" data-theme="dark" aria-label="Switch to dark theme">
-                        <span class="icon-container" id="theme-icon-dark"></span>
-                        <span>Dark</span>
-                    </button>
-                    <button class="theme-btn" data-theme="system" aria-label="Switch to system theme">
-                        <span class="icon-container" id="theme-icon-system"></span>
-                        <span>System</span>
-                    </button>
+                 <div class="resource-card">
+                    <h3>What is Burnout?</h3>
+                    <p>Recognize the signs of burnout and learn strategies to prevent and recover from it.</p>
+                     <a href="#" class="resource-link" data-article="burnout">Read More &rarr;</a>
                 </div>
-            </div>
-            <div class="settings-card">
-                <h3>Account</h3>
-                <p>Manage your account settings.</p>
-                <button id="logout-btn" class="cta-button secondary">Logout</button>
-            </div>
-        </section>
-    </main>
-
-    <main id="admin-root" class="admin-container hidden">
-        <div class="admin-dashboard">
-            <header class="admin-header">
-                <div class="logo">
-                    <img src="logo-bg-rm.png" alt="Sahay Logo" />
-                    <span>Sahay Admin</span>
-                </div>
-                <button id="admin-logout-btn" class="cta-button secondary">Logout</button>
-            </header>
-            <div class="admin-content">
-                <h1>Admin Dashboard</h1>
-                <p>Welcome to the Sahay admin panel. Here you can manage users, view analytics, and configure system
-                    settings.</p>
-                <!-- Admin functionality will be added here -->
             </div>
         </div>
+
+        <div class="resources-category">
+            <h2 class="category-title">Practical Skills</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Mindfulness for Beginners</h3>
+                    <p>A simple introduction to mindfulness practices to reduce stress and improve focus.</p>
+                    <a href="#" class="resource-link" data-article="mindfulness">Read More &rarr;</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Building Resilience</h3>
+                    <p>Discover techniques to build mental and emotional strength to navigate life's challenges.</p>
+                     <a href="#" class="resource-link" data-article="resilience">Read More &rarr;</a>
+                </div>
+                 <div class="resource-card">
+                    <h3>Better Sleep Hygiene</h3>
+                    <p>Understand the connection between sleep and mental health, with tips for improving sleep quality.</p>
+                     <a href="#" class="resource-link" data-article="sleep">Read More &rarr;</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resources-category">
+            <h2 class="category-title">Student Life</h2>
+            <div class="resources-grid">
+               <div class="resource-card">
+                    <h3>Navigating Academic Stress</h3>
+                    <p>Strategies for students to handle the pressures of exams, deadlines, and performance.</p>
+                     <a href="#" class="resource-link" data-article="academicStress">Read More &rarr;</a>
+                </div>
+                 <div class="resource-card">
+                    <h3>Social Anxiety at University</h3>
+                    <p>Tips for managing social fears and building meaningful connections on campus.</p>
+                     <a href="#" class="resource-link" data-article="socialAnxiety">Read More &rarr;</a>
+                </div>
+                 <div class="resource-card">
+                    <h3>Combating Loneliness</h3>
+                    <p>Understand why loneliness happens at university and discover ways to connect with others.</p>
+                     <a href="#" class="resource-link" data-article="loneliness">Read More &rarr;</a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="settings-page" class="settings-page hidden">
+        <div class="settings-header">
+          <h1>Settings</h1>
+        </div>
+        <div class="settings-card">
+            <h3>Appearance</h3>
+            <p>Customize the look and feel of the application.</p>
+            <div class="theme-selector">
+                <button class="theme-btn" data-theme="light" aria-label="Switch to light theme">
+                    <span class="icon-container" id="theme-icon-light"></span>
+                    <span>Light</span>
+                </button>
+                <button class="theme-btn" data-theme="dark" aria-label="Switch to dark theme">
+                     <span class="icon-container" id="theme-icon-dark"></span>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-btn" data-theme="system" aria-label="Switch to system theme">
+                     <span class="icon-container" id="theme-icon-system"></span>
+                    <span>System</span>
+                </button>
+            </div>
+        </div>
+         <div class="settings-card">
+            <h3>Account</h3>
+            <p>Log out of your current session.</p>
+            <button id="logout-btn" class="logout-btn">
+                <span class="icon-container" id="logout-icon"></span>
+                <span>Log Out</span>
+            </button>
+        </div>
+      </section>
     </main>
 
     <div id="crisis-modal" class="crisis-modal hidden">
@@ -334,35 +402,30 @@
                 <span class="icon-container" id="crisis-modal-close-icon"></span>
             </button>
             <h2>Your Safety is Most Important</h2>
-            <p>It sounds like you are going through a difficult time. Please reach out for help. You are not alone, and
-                there are people who want to support you.</p>
+            <p>It sounds like you are going through a difficult time. Please reach out for help. You are not alone, and there are people who want to support you.</p>
             <p>Connect with a real person right now:</p>
             <div class="crisis-resources">
-                <a href="tel:9152987821" class="crisis-link">
-                    <strong>Call 9152987821</strong> (India)
-                    <span>iCALL Mental Health Helpline</span>
+                <a href="tel:988" class="crisis-link">
+                    <strong>Call or Text 988</strong> (USA)
+                    <span>Suicide & Crisis Lifeline</span>
                 </a>
-                <a href="tel:08046110007" class="crisis-link">
-                    <strong>Call 080-46110007</strong> (India)
-                    <span>Sneha Suicide Prevention Helpline</span>
+                <a href="https://988lifeline.org/chat/" target="_blank" class="crisis-link">
+                    <strong>988 Lifeline Chat</strong>
+                    <span>Online chat support</span>
                 </a>
-                <a href="https://www.vandrevalafoundation.com/get-help" target="_blank" class="crisis-link">
-                    <strong>Vandrevala Foundation</strong>
-                    <span>24/7 Helpline: 9999 666 555</span>
-                </a>
-                <a href="tel:08025497777" class="crisis-link">
-                    <strong>Call 080-25497777</strong> (India)
-                    <span>Parivarthan Counselling Training & Research Centre</span>
+                 <a href="https://www.thetrevorproject.org/get-help/" target="_blank" class="crisis-link">
+                    <strong>The Trevor Project</strong>
+                    <span>Support for LGBTQ Youth</span>
                 </a>
             </div>
-            <p class="small-text">If you are in immediate danger, please call 100 (Police) or 102 (Emergency Medical Services) or your local emergency number.</p>
+            <p class="small-text">If you are in immediate danger, please call 911 or your local emergency number.</p>
         </div>
     </div>
-
+    
     <div id="article-modal" class="article-modal hidden">
         <div class="modal-content">
             <button id="modal-close-btn" class="modal-close-btn" aria-label="Close article">
-                <span class="icon-container" id="modal-close-icon"></span>
+                 <span class="icon-container" id="modal-close-icon"></span>
             </button>
             <h2 id="modal-title"></h2>
             <div id="modal-body"></div>
@@ -377,6 +440,5 @@
         <p id="voice-transcript" class="voice-transcript"></p>
     </section>
 
-</body>
-
+  </body>
 </html>
