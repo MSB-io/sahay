@@ -252,8 +252,8 @@
             </ul>
         </div>
       </aside>
-      <section class="chat-container">
-        <header class="chat-header">
+      <div class="main-content">
+        <header class="main-header">
             <button id="mobile-sidebar-toggle-btn" class="icon-btn mobile-sidebar-toggle-btn" aria-label="Open menu">
               <span class="icon-container" id="mobile-sidebar-toggle-icon"></span>
             </button>
@@ -261,139 +261,141 @@
                 <span class="icon-container" id="profile-icon-header"></span>
             </button>
         </header>
-        <div id="welcome-screen" class="welcome-screen">
-          <h1 class="welcome-logo-text">सहाय</h1>
-          <h2>Hello! How can I help you today?</h2>
-          <div class="prompt-starters-grid">
-            <button class="prompt-starter">I'm feeling stressed</button>
-            <button class="prompt-starter">Let's talk about exams</button>
-            <button class="prompt-starter">I'm having trouble sleeping</button>
-            <button class="prompt-starter">I need to vent</button>
+        <section class="chat-container">
+          <div id="welcome-screen" class="welcome-screen">
+            <h1 class="welcome-logo-text">सहाय</h1>
+            <h2>Hello! How can I help you today?</h2>
+            <div class="prompt-starters-grid">
+              <button class="prompt-starter">I'm feeling stressed</button>
+              <button class="prompt-starter">Let's talk about exams</button>
+              <button class="prompt-starter">I'm having trouble sleeping</button>
+              <button class="prompt-starter">I need to vent</button>
+            </div>
           </div>
-        </div>
-        <div id="chat-messages" class="chat-messages hidden">
-          <!-- Chat messages will be dynamically inserted here -->
-        </div>
-        <div class="chat-input-area">
-          <form id="chat-form" class="chat-form">
-            <input
-              type="text"
-              id="chat-input"
-              placeholder="Ask anything"
-              aria-label="Chat message"
-              autocomplete="off"
-            />
-            <button type="button" class="icon-btn" id="mic-btn" aria-label="Use microphone">
-                <span class="icon-container" id="mic-btn-icon"></span>
-            </button>
-            <button type="button" class="icon-btn" id="action-btn" aria-label="Voice mode">
-                <span class="icon-container" id="action-btn-icon"></span>
-            </button>
-          </form>
-        </div>
-      </section>
+          <div id="chat-messages" class="chat-messages hidden">
+            <!-- Chat messages will be dynamically inserted here -->
+          </div>
+          <div class="chat-input-area">
+            <form id="chat-form" class="chat-form">
+              <input
+                type="text"
+                id="chat-input"
+                placeholder="Ask anything"
+                aria-label="Chat message"
+                autocomplete="off"
+              />
+              <button type="button" class="icon-btn" id="mic-btn" aria-label="Use microphone">
+                  <span class="icon-container" id="mic-btn-icon"></span>
+              </button>
+              <button type="button" class="icon-btn" id="action-btn" aria-label="Voice mode">
+                  <span class="icon-container" id="action-btn-icon"></span>
+              </button>
+            </form>
+          </div>
+        </section>
 
-      <section id="resources-page" class="resources-page hidden">
-        <div class="resources-header">
-            <h1>Resource Library</h1>
-            <p class="resources-intro">Explore these curated articles and guides to learn more about mental well-being. Knowledge is a powerful tool for self-care and growth.</p>
-        </div>
+        <section id="resources-page" class="resources-page hidden">
+          <div class="resources-header">
+              <h1>Resource Library</h1>
+              <p class="resources-intro">Explore these curated articles and guides to learn more about mental well-being. Knowledge is a powerful tool for self-care and growth.</p>
+          </div>
 
-        <div class="resources-category">
-            <h2 class="category-title">Core Concepts</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h3>Understanding Anxiety</h3>
-                    <p>Learn the symptoms, causes, and effective strategies for managing anxiety in daily life.</p>
-                    <a href="#" class="resource-link" data-article="anxiety">Read More &rarr;</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Coping with Depression</h3>
-                    <p>Explore practical advice, from lifestyle adjustments to when it's important to seek professional help.</p>
-                     <a href="#" class="resource-link" data-article="depression">Read More &rarr;</a>
-                </div>
-                 <div class="resource-card">
-                    <h3>What is Burnout?</h3>
-                    <p>Recognize the signs of burnout and learn strategies to prevent and recover from it.</p>
-                     <a href="#" class="resource-link" data-article="burnout">Read More &rarr;</a>
-                </div>
-            </div>
-        </div>
+          <div class="resources-category">
+              <h2 class="category-title">Core Concepts</h2>
+              <div class="resources-grid">
+                  <div class="resource-card">
+                      <h3>Understanding Anxiety</h3>
+                      <p>Learn the symptoms, causes, and effective strategies for managing anxiety in daily life.</p>
+                      <a href="#" class="resource-link" data-article="anxiety">Read More &rarr;</a>
+                  </div>
+                  <div class="resource-card">
+                      <h3>Coping with Depression</h3>
+                      <p>Explore practical advice, from lifestyle adjustments to when it's important to seek professional help.</p>
+                       <a href="#" class="resource-link" data-article="depression">Read More &rarr;</a>
+                  </div>
+                   <div class="resource-card">
+                      <h3>What is Burnout?</h3>
+                      <p>Recognize the signs of burnout and learn strategies to prevent and recover from it.</p>
+                       <a href="#" class="resource-link" data-article="burnout">Read More &rarr;</a>
+                  </div>
+              </div>
+          </div>
 
-        <div class="resources-category">
-            <h2 class="category-title">Practical Skills</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h3>Mindfulness for Beginners</h3>
-                    <p>A simple introduction to mindfulness practices to reduce stress and improve focus.</p>
-                    <a href="#" class="resource-link" data-article="mindfulness">Read More &rarr;</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Building Resilience</h3>
-                    <p>Discover techniques to build mental and emotional strength to navigate life's challenges.</p>
-                     <a href="#" class="resource-link" data-article="resilience">Read More &rarr;</a>
-                </div>
+          <div class="resources-category">
+              <h2 class="category-title">Practical Skills</h2>
+              <div class="resources-grid">
+                  <div class="resource-card">
+                      <h3>Mindfulness for Beginners</h3>
+                      <p>A simple introduction to mindfulness practices to reduce stress and improve focus.</p>
+                      <a href="#" class="resource-link" data-article="mindfulness">Read More &rarr;</a>
+                  </div>
+                  <div class="resource-card">
+                      <h3>Building Resilience</h3>
+                      <p>Discover techniques to build mental and emotional strength to navigate life's challenges.</p>
+                       <a href="#" class="resource-link" data-article="resilience">Read More &rarr;</a>
+                  </div>
+                   <div class="resource-card">
+                      <h3>Better Sleep Hygiene</h3>
+                      <p>Understand the connection between sleep and mental health, with tips for improving sleep quality.</p>
+                       <a href="#" class="resource-link" data-article="sleep">Read More &rarr;</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="resources-category">
+              <h2 class="category-title">Student Life</h2>
+              <div class="resources-grid">
                  <div class="resource-card">
-                    <h3>Better Sleep Hygiene</h3>
-                    <p>Understand the connection between sleep and mental health, with tips for improving sleep quality.</p>
-                     <a href="#" class="resource-link" data-article="sleep">Read More &rarr;</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="resources-category">
-            <h2 class="category-title">Student Life</h2>
-            <div class="resources-grid">
-               <div class="resource-card">
-                    <h3>Navigating Academic Stress</h3>
-                    <p>Strategies for students to handle the pressures of exams, deadlines, and performance.</p>
-                     <a href="#" class="resource-link" data-article="academicStress">Read More &rarr;</a>
-                </div>
-                 <div class="resource-card">
-                    <h3>Social Anxiety at University</h3>
-                    <p>Tips for managing social fears and building meaningful connections on campus.</p>
-                     <a href="#" class="resource-link" data-article="socialAnxiety">Read More &rarr;</a>
-                </div>
-                 <div class="resource-card">
-                    <h3>Combating Loneliness</h3>
-                    <p>Understand why loneliness happens at university and discover ways to connect with others.</p>
-                     <a href="#" class="resource-link" data-article="loneliness">Read More &rarr;</a>
-                </div>
-            </div>
-        </div>
-      </section>
+                      <h3>Navigating Academic Stress</h3>
+                      <p>Strategies for students to handle the pressures of exams, deadlines, and performance.</p>
+                       <a href="#" class="resource-link" data-article="academicStress">Read More &rarr;</a>
+                  </div>
+                   <div class="resource-card">
+                      <h3>Social Anxiety at University</h3>
+                      <p>Tips for managing social fears and building meaningful connections on campus.</p>
+                       <a href="#" class="resource-link" data-article="socialAnxiety">Read More &rarr;</a>
+                  </div>
+                   <div class="resource-card">
+                      <h3>Combating Loneliness</h3>
+                      <p>Understand why loneliness happens at university and discover ways to connect with others.</p>
+                       <a href="#" class="resource-link" data-article="loneliness">Read More &rarr;</a>
+                  </div>
+              </div>
+          </div>
+        </section>
 
-      <section id="settings-page" class="settings-page hidden">
-        <div class="settings-header">
-          <h1>Settings</h1>
-        </div>
-        <div class="settings-card">
-            <h3>Appearance</h3>
-            <p>Customize the look and feel of the application.</p>
-            <div class="theme-selector">
-                <button class="theme-btn" data-theme="light" aria-label="Switch to light theme">
-                    <span class="icon-container" id="theme-icon-light"></span>
-                    <span>Light</span>
-                </button>
-                <button class="theme-btn" data-theme="dark" aria-label="Switch to dark theme">
-                     <span class="icon-container" id="theme-icon-dark"></span>
-                    <span>Dark</span>
-                </button>
-                <button class="theme-btn" data-theme="system" aria-label="Switch to system theme">
-                     <span class="icon-container" id="theme-icon-system"></span>
-                    <span>System</span>
-                </button>
-            </div>
-        </div>
-         <div class="settings-card">
-            <h3>Account</h3>
-            <p>Log out of your current session.</p>
-            <button id="logout-btn" class="logout-btn">
-                <span class="icon-container" id="logout-icon"></span>
-                <span>Log Out</span>
-            </button>
-        </div>
-      </section>
+        <section id="settings-page" class="settings-page hidden">
+          <div class="settings-header">
+            <h1>Settings</h1>
+          </div>
+          <div class="settings-card">
+              <h3>Appearance</h3>
+              <p>Customize the look and feel of the application.</p>
+              <div class="theme-selector">
+                  <button class="theme-btn" data-theme="light" aria-label="Switch to light theme">
+                      <span class="icon-container" id="theme-icon-light"></span>
+                      <span>Light</span>
+                  </button>
+                  <button class="theme-btn" data-theme="dark" aria-label="Switch to dark theme">
+                       <span class="icon-container" id="theme-icon-dark"></span>
+                      <span>Dark</span>
+                  </button>
+                  <button class="theme-btn" data-theme="system" aria-label="Switch to system theme">
+                       <span class="icon-container" id="theme-icon-system"></span>
+                      <span>System</span>
+                  </button>
+              </div>
+          </div>
+           <div class="settings-card">
+              <h3>Account</h3>
+              <p>Log out of your current session.</p>
+              <button id="logout-btn" class="logout-btn">
+                  <span class="icon-container" id="logout-icon"></span>
+                  <span>Log Out</span>
+              </button>
+          </div>
+        </section>
+      </div>
     </main>
 
     <div id="crisis-modal" class="crisis-modal hidden">
