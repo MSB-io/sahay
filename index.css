@@ -103,9 +103,6 @@ body.modal-open {
   padding: 0.75rem;
   border-right: 1px solid var(--sidebar-border);
 }
-.sidebar.collapsed {
-    transform: translateX(-100%);
-}
 body.sidebar-open .sidebar {
     transform: translateX(0);
 }
@@ -732,7 +729,7 @@ body.sidebar-open .sidebar-overlay { opacity: 1; pointer-events: auto; }
 @media (min-width: 769px) {
   .sidebar {
     position: relative;
-    transform: translateX(0);
+    transform: translateX(0) !important;
     z-index: 1;
     transition: width 0.3s ease-in-out, background-color 0.3s;
     flex-shrink: 0;
